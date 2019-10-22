@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import sys
 import argparse
 
 
@@ -33,7 +32,3 @@ def parse_args(args: [str]):
     parser.add_argument(
         '--output-file')
     return parser.parse_args(args)
-
-
-if __name__ == '__main__':
-    parsed_object = parse_args(sys.argv[1:])
