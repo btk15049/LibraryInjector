@@ -3,6 +3,9 @@
 tasks.xml
 
 **/__pycache__/**
+.coverage
+coverage.xml
+.scannerwork
 
 # おまけ
 venv
