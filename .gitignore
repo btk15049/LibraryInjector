@@ -1,0 +1,6 @@
+# 公式ドキュメントに従ってPyCharmの吐くやつはこれだけ対象外
+.idea/workspace.xml
+tasks.xml
+
+# おまけ
+venv
