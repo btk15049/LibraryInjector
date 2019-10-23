@@ -29,3 +29,6 @@ jobs:
         pip install coverage
         coverage run -m unittest discover -s tests -v
         coverage xml -i
+    - name: Submit coverage report to sonarcloud.io
+      run: |
+        apt-get install sonar-scanner
