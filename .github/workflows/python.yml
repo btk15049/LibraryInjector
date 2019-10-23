@@ -1,4 +1,4 @@
-name: Python Lint and Test
+name: Python lint and test
 
 on: [push]
 
@@ -31,4 +31,4 @@ jobs:
         coverage xml -i
     - name: Submit coverage report to sonarcloud.io
       run: |
-        apt-get install sonar-scanner
+        sudo apt-get install sonar-scanner
