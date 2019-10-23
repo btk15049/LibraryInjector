@@ -1,4 +1,4 @@
-name: Python lint and test pipeline
+name: Python Lint and Test
 
 on: [push]
 
