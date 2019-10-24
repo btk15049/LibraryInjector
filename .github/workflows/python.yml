@@ -1,9 +1,9 @@
-name: Python lint and test
+name: Python Lint and Test
 
 on: [push]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
