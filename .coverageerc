@@ -1,6 +1,6 @@
 [run]
 source = .
-omit = */tests/*
+omit = setup.py, */tests/*
 
 [report]
 show_missing = True
