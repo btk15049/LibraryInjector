@@ -16,7 +16,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -e .
       - name: Run e2e test
+        run: |
           libij -h
           libij a.cpp
-
-
