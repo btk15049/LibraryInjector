@@ -17,5 +17,9 @@ class TopologicalSortTest(unittest.TestCase):
         self.assertListEqual(topological_sort(nodes, edges), expected)
 
 
+def aoj_system_test():
+    pass
+
+
 if __name__ == '__main__':
     unittest.main()
