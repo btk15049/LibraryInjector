@@ -17,5 +17,6 @@ jobs:
           pip install -e .
           libij -h
           libij a.cpp
+          libij
 
 
