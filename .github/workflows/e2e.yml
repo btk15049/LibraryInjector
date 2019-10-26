@@ -13,5 +13,5 @@ jobs:
           with:
             python-version: 3.7
         - name: Install using pip
-          step:
+          run: |
             pip install -e .
