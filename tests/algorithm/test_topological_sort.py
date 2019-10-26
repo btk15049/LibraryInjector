@@ -18,6 +18,10 @@ class TopologicalSortTest(unittest.TestCase):
 
 
 def aoj_system_test():
+    """
+    The problem of aoj for topological sort use special judge.
+    So, I can't verify using online-judge-tools. (T T)
+    """
     V, E = map(int, input().split())
     nodes = []
     edges = []
