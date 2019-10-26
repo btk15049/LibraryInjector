@@ -15,7 +15,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -e . develop
-      -name: System Test
+      - name: System Test
         run: |
           GRL_4
 
