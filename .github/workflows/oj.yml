@@ -11,10 +11,15 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.7
-      - name: Install using Pip
+      - name: Install online judge tools
         run: |
           python -m pip install --upgrade pip
+          pip install -U online-judge-tools
+          which oj
+      - name: Install using Pip
+        run: |
           pip install -e .[develop]
+          which GRL_4
       - name: System Test
         run: |
           GRL_4
