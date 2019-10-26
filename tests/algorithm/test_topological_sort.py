@@ -21,6 +21,7 @@ def aoj_system_test():
     """
     The problem of aoj for topological sort use special judge.
     So, I can't verify using online-judge-tools. (T T)
+    This code was verified by http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3953654#1
     """
     V, E = map(int, input().split())
     nodes = []
