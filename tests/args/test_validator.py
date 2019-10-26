@@ -29,3 +29,7 @@ class ArgumentValidatorTest(unittest.TestCase):
             with self.assertRaises(ArgumentCombinationError):
                 validate_args(argparse.Namespace())
             self.assertEqual(mock.call_count, 1)
+
+
+if __name__ == '__main__':
+    unittest.main()
