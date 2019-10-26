@@ -10,7 +10,6 @@ def validate_if_see_only(args: argparse.Namespace):
     if args.action == 'see-dependency' and args.inplace:
         raise ArgumentCombinationError(
             "If a '--action' value is 'see-dependency', '--inplace' flag should not be set.")
-    return
 
 
 def validate_args(args: argparse.Namespace):
