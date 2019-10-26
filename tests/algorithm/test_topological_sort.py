@@ -18,7 +18,18 @@ class TopologicalSortTest(unittest.TestCase):
 
 
 def aoj_system_test():
-    pass
+    V, E = map(int, input().split())
+    nodes = []
+    edges = []
+    for i in range(V):
+        nodes.append(i)
+        edges.append([])
+    for _ in range(E):
+        a, b = map(int, input().split())
+        edges[b].append(a)
+    ret = topological_sort(nodes, edges)
+    for v in ret:
+        print(v)
 
 
 if __name__ == '__main__':
