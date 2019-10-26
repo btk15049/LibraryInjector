@@ -19,8 +19,14 @@ jobs:
       - name: Install using Pip
         run: |
           pip install -e .[develop]
-          which GRL_4
       - name: System Test
         run: |
-          GRL_4
+          mkdir -p $DIR
+          oj download --system "$URL" -d $DIR
+          oj test -c $BIN -d $DIR
+        env:
+          BIN: GRL_4_B
+          DIR: /aoj/GRL_4_B
+          URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
+
 
