@@ -26,7 +26,7 @@ jobs:
           oj test -c $BIN -d $DIR
         env:
           BIN: GRL_4_B
-          DIR: /aoj/GRL_4_B
+          DIR: aoj/GRL_4_B
           URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
 
 
