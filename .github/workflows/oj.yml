@@ -1,0 +1,35 @@
+name: AOJ System Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install using Pip
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e .[develop]
+      - name: Install online judge tools
+        run: |
+          git clone https://github.com/btk15049/online-judge-tools.git
+          cd online-judge-tools
+          git checkout -b implement_special_judge origin/implement_special_judge
+          pip install -e .
+          cd ..
+          which oj
+      - name: System Test
+        run: |
+          mkdir -p $DIR
+          oj download --system "$URL" -d $DIR
+          oj test -c $BIN -d $DIR --special-judge $JDG
+        env:
+          BIN: GRL_4_B
+          JDG: GRL_4_B_JUDGE
+          DIR: aoj/GRL_4_B
+          URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
