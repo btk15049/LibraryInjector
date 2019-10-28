@@ -21,6 +21,7 @@ jobs:
           cd online-judge-tools
           git checkout -b implement_special_judge
           pip install -e .
+          cd ..
           which oj
       - name: System Test
         run: |
