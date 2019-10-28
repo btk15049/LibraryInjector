@@ -19,7 +19,7 @@ jobs:
         run: |
           git clone https://github.com/btk15049/online-judge-tools.git
           cd online-judge-tools
-          git checkout -b implement_special_judge origin/implement_special_judge
+          git checkout -b feature/special_judge origin/feature/special_judge
           pip install -e .
           cd ..
           which oj
