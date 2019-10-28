@@ -27,8 +27,9 @@ jobs:
         run: |
           mkdir -p $DIR
           oj download --system "$URL" -d $DIR
-          oj test -c $BIN -d $DIR
+          oj test -c $BIN -d $DIR --special-judge $JDG
         env:
           BIN: GRL_4_B
+          JDG: GRL_4_B_JUDGE
           DIR: aoj/GRL_4_B
           URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B

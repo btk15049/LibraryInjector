@@ -18,11 +18,6 @@ class TopologicalSortTest(unittest.TestCase):
 
 
 def aoj_system_test():
-    """
-    The problem of aoj for topological sort use special judge.
-    So, I can't verify using online-judge-tools. (T T)
-    This code was verified by http://judge.u-aizu.ac.jp/onlinejudge/review.jsp?rid=3953654#1
-    """
     V, E = map(int, input().split())
     nodes = []
     edges = []
@@ -35,6 +30,20 @@ def aoj_system_test():
     ret = topological_sort(nodes, edges)
     for v in ret:
         print(v)
+
+
+def aoj_system_test_judge():
+    V, E = map(int, input().split())
+    pos = [-1] * V
+    edges = []
+    for _ in range(E):
+        edges.append(map(int, input().split()))
+    for i in range(V):
+        v = int(input())
+        assert 0 <= v < V
+        pos[v] = i
+    for a, b in edges:
+        assert(pos[a] < pos[b])
 
 
 if __name__ == '__main__':
