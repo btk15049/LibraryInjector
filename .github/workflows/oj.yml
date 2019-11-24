@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p $DIR
           oj download --system "$URL" -d $DIR
-          oj test -c $BIN -d $DIR --judge-command $JDG
+          oj test -c $BIN -d $DIR --judge-command $JDG -s
         env:
           BIN: GRL_4_B
           JDG: GRL_4_B_JUDGE
