@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from injector.algorithm.topological_sort import topological_sort
+import sys
 import unittest
 
 
@@ -33,18 +34,19 @@ def aoj_system_test():
 
 
 def aoj_system_test_judge():
-    V, E = map(int, input().split())
-    pos = [-1] * V
-    edges = []
-    for _ in range(E):
-        edges.append(map(int, input().split()))
-    for i in range(V):
-        v = int(input())
-        assert 0 <= v < V
-        pos[v] = i
+    with open(sys.argv[1]) as testcase:
+        V, E = map(int, testcase.readline().split())
+        pos = [-1] * V
+        edges = []
+        for _ in range(E):
+            edges.append(map(int, testcase.readline().split()))
+    with open(sys.argv[2]) as user_output:
+        for i in range(V):
+            v = int(user_output.readline())
+            assert 0 <= v < V
+            pos[v] = i
     for a, b in edges:
-        assert(pos[a] < pos[b])
-
+        assert pos[a] < pos[b]
 
 if __name__ == '__main__':
     unittest.main()
