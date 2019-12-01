@@ -28,7 +28,7 @@ jobs:
           URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
       - name: System Test
         run: |
-          oj test -c $BIN -d $DIR --judge-command $JDG -s
+          oj test -c $BIN -d $DIR --judge-command $JDG -s -j 4
         env:
           BIN: GRL_4_B
           JDG: GRL_4_B_JUDGE
