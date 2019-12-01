@@ -17,11 +17,7 @@ jobs:
           pip install -e .[develop]
       - name: Install online judge tools
         run: |
-          git clone https://github.com/btk15049/online-judge-tools.git
-          cd online-judge-tools
-          git checkout -b feature/special_judge origin/feature/special_judge
-          pip install -e .
-          cd ..
+          pip install online-judge-tools
           which oj
       - name: System Test
         run: |
