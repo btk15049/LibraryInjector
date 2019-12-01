@@ -45,18 +45,18 @@ class InfoTest(unittest.TestCase):
             'lib2/A/d.hpp',
         ]
         expected = {
-            'local': [
-                (0, pathlib.Path(self.root.name + os.sep + 'lib1/a.hpp')),
-                (1, pathlib.Path(self.root.name + os.sep + 'lib1/b.hpp')),
-                (2, pathlib.Path(self.root.name + os.sep + 'lib1/A/a.hpp')),
-                (3, pathlib.Path(self.root.name + os.sep + 'lib1/A/b.hpp')),
-                (4, pathlib.Path(self.root.name + os.sep + 'lib1/B/a.hpp')),
-                (5, pathlib.Path(self.root.name + os.sep + 'lib2/c.hpp')),
-                (6, pathlib.Path(self.root.name + os.sep + 'lib2/A/d.hpp')),
-            ],
-            'stl': [
-                (7, 'iostream')
-            ],
+            'local': {
+                0: pathlib.Path(self.root.name + os.sep + 'lib1/a.hpp'),
+                1: pathlib.Path(self.root.name + os.sep + 'lib1/b.hpp'),
+                2: pathlib.Path(self.root.name + os.sep + 'lib1/A/a.hpp'),
+                3: pathlib.Path(self.root.name + os.sep + 'lib1/A/b.hpp'),
+                4: pathlib.Path(self.root.name + os.sep + 'lib1/B/a.hpp'),
+                5: pathlib.Path(self.root.name + os.sep + 'lib2/c.hpp'),
+                6: pathlib.Path(self.root.name + os.sep + 'lib2/A/d.hpp'),
+            },
+            'stl': {
+                7: 'iostream',
+            },
         }
         self.setUpFiles(files)
         actual = Include(
