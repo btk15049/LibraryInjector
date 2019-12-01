@@ -60,8 +60,8 @@ class InfoTest(unittest.TestCase):
         }
         self.setUpFiles(files)
         actual = Include(
-            source=args['source'],
-            lib_dirs=args['lib_dirs'])
+            args['source'],
+            *args['lib_dirs'])
         self.assertEqual(expected['local'], actual.local)
         self.assertEqual(expected['stl'], actual.stl)
 

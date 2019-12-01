@@ -9,7 +9,7 @@ class Include:
     local_matcher = re.compile(r'[\s]*#[\s]*include[\s]*\"([^\"]+)\"')
     stl_matcher = re.compile(r'[\s]*#[\s]*include[\s]*\<([^\>]+)\>')
 
-    def __init__(self, source: [str], lib_dirs: [str]):
+    def __init__(self, source: [str], *lib_dirs):
         self.local: {int, str} = {}
         self.stl: {int, str} = {}
         for si in range(len(source)):
@@ -45,7 +45,7 @@ class Source:
     hpps = set()
     cpps = set()
 
-    def __init__(self, path: str):
+    def __init__(self, path: str, *lib_dirs):
         self.path = pathlib.Path(path)
 
         base = str(self.path.parent) + os.sep + self.path.stem
@@ -63,21 +63,21 @@ class Source:
         self.content: [str] = self.path.read_text().splitlines()
         self.includes = Include(
             self.content,
-            [])  # TODO: assign lib_dir
+            [], lib_dirs)  # TODO: assign lib_dir
 
         self.implement = Implement(
             self.content, self.includes.stl.keys(), self.includes.local.keys())
         logging.info('{} is registered'.format(path))
 
     @staticmethod
-    def load(path: str):
+    def load(path: str, *lib_dirs):
         if not pathlib.Path(path).exists():
             return None
         if path not in Source.cache:
-            Source.cache[path] = Source(path)
+            Source.cache[path] = Source(path, *lib_dirs)
         return Source.cache[path]
 
 
 class Info:
-    def __init__(self, path) -> None:
+    def __init__(self, path, *lib_dirs) -> None:
         pass
