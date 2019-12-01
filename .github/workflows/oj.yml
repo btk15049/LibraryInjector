@@ -19,13 +19,17 @@ jobs:
         run: |
           pip install online-judge-tools
           which oj
-      - name: System Test
+      - name: Setup testcases
         run: |
           mkdir -p $DIR
           oj download --system "$URL" -d $DIR
+        env:
+          DIR: aoj/GRL_4_B
+          URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
+      - name: System Test
+        run: |
           oj test -c $BIN -d $DIR --judge-command $JDG -s
         env:
           BIN: GRL_4_B
           JDG: GRL_4_B_JUDGE
           DIR: aoj/GRL_4_B
-          URL: http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_4_B
