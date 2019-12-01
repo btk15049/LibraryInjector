@@ -63,7 +63,7 @@ class Source:
         self.content: [str] = self.path.read_text().splitlines()
         self.includes = Include(
             self.content,
-            [], lib_dirs)  # TODO: assign lib_dir
+            [], lib_dirs)
 
         self.implement = Implement(
             self.content, self.includes.stl.keys(), self.includes.local.keys())
