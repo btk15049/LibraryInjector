@@ -25,7 +25,7 @@ def parse_args(args: [str]):
         '--inplace',
         action='store_true',
         help='When you set this option, injector overwrite your main file. This option work when only --action is '
-             '\'all\'.')
+             '\'inject-library\'.')
     parser.add_argument(
         '--no-stdout',
         action='store_true',)

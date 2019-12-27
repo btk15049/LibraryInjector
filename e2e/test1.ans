@@ -1,0 +1,23 @@
+/* #region a */
+
+void hello();
+
+/* #endregion a */
+
+/* #region a */
+
+
+void hello() {
+    std::cout << "Hello, world!" << std::endl;
+}
+
+/* #endregion a */
+
+/* #region main1 */
+
+
+int main() {
+    hello();
+}
+
+/* #endregion main1 */

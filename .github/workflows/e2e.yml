@@ -17,5 +17,8 @@ jobs:
           pip install -e .
       - name: Run e2e test
         run: |
+          cd e2e
           libij -h
-          libij a.cpp
+          libij main1.cpp -L lib1 > test1.out && diff test1.out test1.ans
+
+
