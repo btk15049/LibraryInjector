@@ -185,7 +185,7 @@ class InfoTest(unittest.TestCase):
             ('lib1/a.hpp', '#include "B/a.hpp"'),
             ('lib1/a.cpp', '#include "a.hpp"\n#include "b.hpp"\n'),
             ('lib1/b.hpp', '#include "A/a.hpp"\n'),
-            ('lib1/A/a.hpp', '#include "A/b.hpp"\n#include "B/a.hpp\n"'),
+            ('lib1/A/a.hpp', '#include "A/b.hpp"\n#include "B/a.hpp"\n'),
             ('lib1/A/b.hpp', '#include <iostream>\n'),
             ('lib1/B/a.hpp', '#include <sstream>'),
             ('lib2/c.hpp', '#include <algorithm>'),
