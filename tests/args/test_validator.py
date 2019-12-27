@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from injector.args.validator import *
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import patch
 
 
 class ArgumentValidatorTest(unittest.TestCase):
