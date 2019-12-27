@@ -82,7 +82,8 @@ class Source:
             return None
         if path not in Source.cache:
             Source.cache[path] = None
-            Source.cache[path] = Source(path, *lib_dirs)
+            source = Source(path, *lib_dirs)
+            Source.cache[path] = source
         return Source.cache[path]
 
     @staticmethod
