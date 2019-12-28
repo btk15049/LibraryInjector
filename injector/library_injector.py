@@ -33,7 +33,10 @@ def main():
     submit_code = build(info)
 
     if parsed_args.no_stdout is False:
-        print(colored(submit_code, 'blue'))
+        if parsed_args.no_color is False:
+            print(colored(submit_code, 'blue'))
+        else:
+            print(submit_code)
 
 
 if __name__ == '__main__':

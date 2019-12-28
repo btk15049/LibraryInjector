@@ -19,6 +19,6 @@ jobs:
         run: |
           cd e2e
           libij -h
-          libij main1.cpp -L lib1 > test1.out && diff test1.out test1.ans
+          libij main1.cpp -L lib1 > test1.out && diff test1.out test1.ans --no-color
 
 

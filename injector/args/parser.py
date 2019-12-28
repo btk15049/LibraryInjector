@@ -28,7 +28,10 @@ def parse_args(args: [str]):
              '\'inject-library\'.')
     parser.add_argument(
         '--no-stdout',
-        action='store_true',)
+        action='store_true')
     parser.add_argument(
         '--output-file')
+    parser.add_argument(
+        '--no-color',
+        action='store_true')
     return parser.parse_args(args)
