@@ -4,15 +4,6 @@ void hello();
 
 /* #endregion a */
 
-/* #region a */
-
-
-void hello() {
-    std::cout << "Hello, world!" << std::endl;
-}
-
-/* #endregion a */
-
 /* #region main1 */
 
 
@@ -21,3 +12,12 @@ int main() {
 }
 
 /* #endregion main1 */
+
+/* #region a */
+
+
+void hello() {
+    std::cout << "Hello, world!" << std::endl;
+}
+
+/* #endregion a */

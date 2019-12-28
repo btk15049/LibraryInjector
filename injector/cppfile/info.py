@@ -105,9 +105,11 @@ class Info:
 
     def compute_sorted(self) -> [Source]:
         edges = {
-            source: Source.load(
-                source,
-                self.lib_dirs).includes.local.values() for source in self.sources}
-        logging.info('nodes: ' + str(self.sources))
+            source:
+            sorted(list(
+                Source.load(source, self.lib_dirs).includes.local.values()))
+            for source in self.sources}
+        nodes = sorted(list(self.sources))
+        logging.info('nodes: ' + str(nodes))
         logging.info('edges: ' + str(edges))
-        return topological_sort(self.sources, edges)
+        return topological_sort(nodes, edges)
