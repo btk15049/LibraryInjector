@@ -21,3 +21,4 @@ jobs:
           libij -h
           libij main1.cpp -L lib1 --no-color > test1.out && diff test1.out test1.ans --ignore-blank-lines
           libij main1.cpp -L lib1 -o test2.out && diff test2.out test1.ans
+          libij main1.cpp -L lib1 -o test2.out --no-stdout && diff test2.out test1.ans
