@@ -12,6 +12,7 @@ def wrap_region(code: [str], tag: str) -> [str]:
 
 
 def build(info: Info) -> str:
+    stl: [str] = []
     product: [str] = []
     for filename in info.compute_sorted():
         source = Source.load(filename)
@@ -20,7 +21,10 @@ def build(info: Info) -> str:
             wrap_region(
                 implement,
                 source.path.stem))
-    return '\n'.join(product)
+        stl.extend(source.includes.stl.values())
+    stl = wrap_region(['#include <{}>'.format(lib)
+                       for lib in sorted(set(stl))], 'stl')
+    return '\n'.join(stl + product)
 
 
 def main():

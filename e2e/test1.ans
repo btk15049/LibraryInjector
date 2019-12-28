@@ -1,3 +1,9 @@
+/* #region stl */
+
+#include <iostream>
+
+/* #endregion stl */
+
 /* #region a */
 
 void hello();
