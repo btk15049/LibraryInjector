@@ -27,6 +27,7 @@ def parse_args(args: [str]):
         help='When you set this option, injector overwrite your main file. This option work when only --action is '
              '\'inject-library\'.')
     parser.add_argument(
+        '-o',
         '--output-file')
     parser.add_argument(
         '--no-stdout',

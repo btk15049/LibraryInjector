@@ -1,6 +1,7 @@
 /* #region stl */
 
 #include <iostream>
+#include <string>
 
 /* #endregion stl */
 
@@ -15,6 +16,8 @@ void hello();
 
 int main() {
     hello();
+    std::cout << std::string(5, 'a') << std::endl;
+    return 0;
 }
 
 /* #endregion main1 */
@@ -27,4 +30,3 @@ void hello() {
 }
 
 /* #endregion a */
-

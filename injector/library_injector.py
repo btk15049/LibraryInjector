@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import sys
+import pathlib
 from termcolor import colored
 from injector.args.parser import parse_args
 from injector.args.validator import validate_args
@@ -27,6 +28,20 @@ def build(info: Info) -> str:
     return '\n'.join(stl + product)
 
 
+def output(
+        text: str,
+        stdout_flag: bool,
+        colored_flag: bool,
+        output_file) -> None:
+    if stdout_flag is True:
+        if colored_flag is True:
+            print(colored(text, 'blue'))
+        else:
+            print(text)
+    if output_file is not None:
+        pathlib.Path(output_file).write_text(text)
+
+
 def main():
     argv = sys.argv[1:]
     parsed_args = parse_args(argv)
@@ -34,13 +49,13 @@ def main():
     validate_args(parsed_args)
 
     info = Info(parsed_args.file, parsed_args.library)
-    submit_code = build(info)
 
-    if parsed_args.no_stdout is False:
-        if parsed_args.no_color is False:
-            print(colored(submit_code, 'blue'))
-        else:
-            print(submit_code)
+    if parsed_args.action == 'inject-library':
+        submit_code = build(info)
+        output(
+            submit_code,
+            parsed_args.no_stdout is False,
+            parsed_args.no_color is False, parsed_args.output_file)
 
 
 if __name__ == '__main__':
